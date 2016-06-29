@@ -6,6 +6,8 @@ class Story
 {
 public:
     Story();
+    void Einleitung();
+    void Portal();
 };
 
 #endif // STORY_H

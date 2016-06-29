@@ -1,5 +1,10 @@
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <vector>
 #include "umgebung.h"
 
+    using namespace std;
 
     Himmelsrichtungen::Himmelsrichtungen()
     {
@@ -7,10 +12,9 @@
     }
 
 
-    Himmelsrichtungen::Norden() {
+    void Himmelsrichtungen::Norden() {
 
             char nav = 'X';
-
 
             fstream finN( "Umgebung.txt" );
             if (!finN.is_open()) throw runtime_error("Umgebung.txt konnte nicht geöffnet werden");
@@ -27,6 +31,7 @@
             cout << tmpUmgebung[] << endl;
             cout << tmpUmgebung[] << endl;
 
+
             if(nav == 'A' || nav == 'a') {
                 Westen();
             }else if (nav == 'D' || nav == 'd') {
@@ -38,7 +43,9 @@
 
     }
 
-    Himmelsrichtungen::Westen() {
+    void Himmelsrichtungen::Westen() {
+
+            char nav = 'X';
 
             fstream finW( "Umgebung.txt" );
             if (!finW.is_open()) throw runtime_error("Umgebung.txt konnte nicht geöffnet werden");
@@ -64,16 +71,18 @@
             }
     }
 
-    Himmelsrichtungen::Osten() {
+    void Himmelsrichtungen::Osten() {
 
-            fstream finE( "Einleitung.txt" );
-            if (!finE.is_open()) throw runtime_error("Einleitung.txt konnte nicht geöffnet werden");
+            char nav = 'X';
+
+            fstream finE( "Umgebung.txt" );
+            if (!finE.is_open()) throw runtime_error("Umgebung.txt konnte nicht geöffnet werden");
             string line;
-            vector<string> tmpEinleitung;
+            vector<string> tmpUmgebung;
             while (getline(finE, line)) {
                 tmpEinleitung.push_back(line);
             }
-            for (const auto &s : tmpEinleitung) {
+            for (const auto &s : tmpUmgebung) {
                 cout << s << "\n";
             }
 
@@ -90,14 +99,17 @@
             }
     }
 
-    Himmelsrichtungen::Sueden() {
+    void Himmelsrichtungen::Sueden() {
 
-            fstream finE( "Einleitung.txt" );
-            if (!finE.is_open()) throw runtime_error("Einleitung.txt konnte nicht geöffnet werden");
+            char nav = 'X';
+
+
+            fstream finE( "Umgebung.txt" );
+            if (!finE.is_open()) throw runtime_error("Umgebung.txt konnte nicht geöffnet werden");
             string line;
-            vector<string> tmpEinleitung;
+            vector<string> tmpUmgebung;
             while (getline(finE, line)) {
-                tmpEinleitung.push_back(line);
+                tmpUmgebung.push_back(line);
             }
             for (const auto &s : tmpEinleitung) {
                 cout << s << "\n";
@@ -121,8 +133,10 @@
 
     }
 
-    Umschauen::Umgebung() {
+    void Umschauen::Umgebung() {
+
             char nav = 'X';
+
             fstream finU( "Umgebung.txt" );
             if (!finU.is_open()) throw runtime_error("Umgebung.txt konnte nicht geöffnet werden");
             string line;
@@ -139,26 +153,28 @@
             cout << tmpUmgebung[] << endl;
             cout << tmpUmgebung[] << endl;
 
+            Himmelsrichtungen hO;
+
             if (nav == 'W' || nav == 'w') {
-                Himmelsrichtungen.Norden();
+                hO.Norden();
             }else if (nav == 'E' || nav =='e') {
                 //Schicksalsfrage
             }
 
-            if (nav == 'A' || nav = 'a') {
-                Himmelsrichtungen.Westen();
+            if (nav == 'A' || nav == 'a') {
+                hO.Westen();
             }else if (nav == 'E' || nav =='e') {
                 //Schicksalsfrage
             }
 
-            if (nav == 'S' || nav = 's') {
-                Himmelsrichtungen.Sueden();
+            if (nav == 'S' || nav == 's') {
+                hO.Sueden();
             }else if (nav == 'E' || nav =='e') {
                 //Schicksalsfrage
             }
 
-            if (nav == 'D' || nav = 'd') {
-                Himmelsrichtungen.Osten();
+            if (nav == 'D' || nav == 'd') {
+                hO.Osten();
             }else if (nav == 'E' || nav =='e') {
                 //Schicksalsfrage
             }

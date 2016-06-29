@@ -30,7 +30,7 @@
 
     Story::Portal() {
         fstream finE( "Portal.txt" );
-        if (!finE.is_open()) throw runtime_error("Einleitung.txt konnte nicht geöffnet werden");
+        if (!finE.is_open()) throw runtime_error("Portal.txt konnte nicht geöffnet werden");
         string line;
         vector<string> tmpEinleitung;
         while (getline(finE, line)) {
@@ -41,7 +41,8 @@
         }
     }
 
-    Umschauen::Umgebung();
+    Umschauen uO;
+    uO.Umgebung();
 
     /*void Einleitung() {
         fstream finE( "Einleitung.txt" );
@@ -68,4 +69,4 @@
         }
     }*/
 
-};
+

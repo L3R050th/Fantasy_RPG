@@ -5,6 +5,10 @@ class Himmelsrichtungen {
 public:
 
     Himmelsrichtungen();
+    void Norden();
+    void Westen();
+    void Osten();
+    void Sueden();
 
 };
 
@@ -12,6 +16,7 @@ class Umschauen {
 public:
 
     Umschauen();
+    void Umgebung();
 
 };
 
