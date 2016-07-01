@@ -41,8 +41,7 @@
         }
     }
 
-    Umschauen uO;
-    uO.Umgebung();
+   void Umschauen::Umgebung();
 
     /*void Einleitung() {
         fstream finE( "Einleitung.txt" );

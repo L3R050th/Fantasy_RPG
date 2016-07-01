@@ -3,8 +3,10 @@
 #include <fstream>
 #include <vector>
 #include "umgebung.h"
+#include "schicksalsfrage.h"
 
     using namespace std;
+    Schicksalsfrage sO;
 
     Himmelsrichtungen::Himmelsrichtungen()
     {
@@ -37,7 +39,7 @@
             }else if (nav == 'D' || nav == 'd') {
                 Osten();
             }else if (nav == 'E' || nav == 'e') {
-                //Schicksalsfrage
+                sO.Destiny();
             }
 
 
@@ -67,7 +69,7 @@
             }else if (nav == 'D' || nav == 'd') {
                 Norden();
             }else if (nav == 'E' || nav == 'e') {
-                //Schicksalsfrage
+                sO.Destiny();
             }
     }
 
@@ -95,7 +97,7 @@
             }else if (nav == 'D' || nav == 'd') {
                 Sueden();
             }else if (nav == 'E' || nav == 'e') {
-                //Schicksalsfrage
+                sO.Destiny();
             }
     }
 
@@ -124,7 +126,7 @@
             }else if (nav == 'D' || nav == 'd') {
                 Westen();
             }else if (nav == 'E' || nav == 'e') {
-                //Schicksalsfrage
+                sO.Destiny();
             }
     }
 
@@ -158,25 +160,25 @@
             if (nav == 'W' || nav == 'w') {
                 hO.Norden();
             }else if (nav == 'E' || nav =='e') {
-                //Schicksalsfrage
+                sO.Destiny();
             }
 
             if (nav == 'A' || nav == 'a') {
                 hO.Westen();
             }else if (nav == 'E' || nav =='e') {
-                //Schicksalsfrage
+                sO.Destiny();
             }
 
             if (nav == 'S' || nav == 's') {
                 hO.Sueden();
             }else if (nav == 'E' || nav =='e') {
-                //Schicksalsfrage
+                sO.Destiny();
             }
 
             if (nav == 'D' || nav == 'd') {
                 hO.Osten();
             }else if (nav == 'E' || nav =='e') {
-                //Schicksalsfrage
+                sO.Destiny();
             }
     }
 

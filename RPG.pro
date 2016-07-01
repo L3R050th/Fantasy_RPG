@@ -11,8 +11,18 @@ TEMPLATE = app
 
 SOURCES += main.cpp \
     umgebung.cpp \
-    story.cpp
+    story.cpp \
+    schicksalsfrage.cpp \
+    krieger.cpp \
+    magier.cpp \
+    bogenschuetze.cpp
 
 HEADERS += \
     umgebung.h \
-    story.h
+    story.h \
+    schicksalsfrage.h \
+    charname.h \
+    krieger.h \
+    klasse.h \
+    magier.h \
+    bogenschuetze.h
